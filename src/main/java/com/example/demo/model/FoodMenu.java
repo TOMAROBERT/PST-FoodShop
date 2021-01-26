@@ -14,13 +14,13 @@ public class FoodMenu {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "foodMenu_secv")
     @Column(name = "FoodID")
-    private Integer FoodID;
+    private Integer foodId;
     @Column(name = "DenumireProd")
-    private String DenumireProd;
+    private String denumireProd;
     @Column(name = "Ingrediente")
-    private String Ingrediente;
+    private String ingrediente;
     @Column(name = "Pret")
-    private Integer Pret;
+    private Integer pret;
 
     @ManyToOne
     private FoodOrder foodOrder;

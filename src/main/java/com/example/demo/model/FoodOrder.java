@@ -14,9 +14,9 @@ public class FoodOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "foodOrder_secv")
     @Column(name = "OrderID")
-    private Integer OrderID;
+    private Integer orderId;
     @Column(name = "Produse")
-    private String Produse;
+    private String produse;
     @Column(name = "Cantitate")
-    private Integer Cantitate;
+    private Integer cantitate;
 }

@@ -14,9 +14,9 @@ public class Feedback {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "feedback_secv")
     @Column(name = "FeedbackID")
-    private Integer FeedbackID;
+    private Integer feedbackId;
     @Column(name = "Apreciere")
-    private Integer Apreciere;
+    private Integer apreciere;
     @Column(name = "Detalii")
-    private String Detalii;
+    private String detalii;
 }

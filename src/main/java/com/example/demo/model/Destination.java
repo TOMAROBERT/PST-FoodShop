@@ -14,9 +14,9 @@ public class Destination {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "destionation_secv")
     @Column(name = "AdressID")
-    private Integer AdressID;
+    private Integer adressId;
     @Column(name = "Adresa")
-    private String Adresa;
+    private String adresa;
     @Column(name = "Locatie")
-    private String Locatie;
+    private String locatie;
 }

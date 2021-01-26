@@ -13,11 +13,11 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "client_secv")
     @Column(name = "UserID")
-    private Integer UserID;
+    private Integer UserId;
     @Column(name = "Email")
-    private String Email;
+    private String email;
     @Column(name = "Parola")
-    private String Parola;
+    private String parola;
     @Column(name = "Telefon")
-    private Integer Telefon;
+    private Integer telefon;
 }

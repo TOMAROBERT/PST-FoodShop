@@ -2,32 +2,36 @@ package com.example.demo.Controllers;
 
 
 import com.example.demo.model.Destination;
-import com.example.demo.repo.Destination_repo;
+import com.example.demo.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
+@RequestMapping("/destinations")
 public class DestinationController {
-    private final Destination_repo destination_repo;
+    private final DestinationService destinationService;
 
     @Autowired
-    public DestinationController (Destination_repo destination_repo){
-        this.destination_repo=destination_repo;
+    public DestinationController(DestinationService destinationService){
+        this.destinationService = destinationService;
     }
 
-    @GetMapping
-    public List<Destination> getAllDestinations(){
-        List<Destination> destinations = new ArrayList<>();
-        destination_repo.findAll().forEach(y-> destinations.add(y));
-        return destinations;
+    //Lista intreaga
+    public List<Destination> getAllDestionations()
+    {
+        return destinationService.gettAllDestinations();
     }
 
-    @GetMapping("/{id}")
-    public Destination getAllDestinationsById(@PathVariable("id") Integer id){
-        return this.destination_repo.findById(id).orElse(null);
+    //Element dupa id
+    public Destination getDestination(Integer id)
+    {
+        return destinationService.getDestination(id);
     }
 
 }

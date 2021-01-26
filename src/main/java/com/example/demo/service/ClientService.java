@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import com.example.demo.model.Client;
 import com.example.demo.repo.Client_repo;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class ClientService {
@@ -23,6 +25,17 @@ public class ClientService {
 
     public Client getClient(Integer id){
         return client_repo.findById(id).get();
+    }
+
+    //creare
+
+    public Client createClient(@RequestBody Client client){
+        return  client_repo.save(client);
+    }
+
+    public Client uppClient(@PathVariable("id") Integer id , @RequestBody Client client){
+        client.setUserId(id);
+        return client_repo.save(client);
     }
 
 }

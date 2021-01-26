@@ -27,7 +27,7 @@ create table foodMenu(
 create table foodOrder(
 	OrderID int not null auto_increment,
     primary key(OrderID),
-    Produse varchar(20),
+    Produse varchar(20),foodmenu
     Cantitate int
 );
 
@@ -37,3 +37,13 @@ create table feedback(
     Apreciere int,
     Detalii varchar(40)
 );
+
+
+INSERT INTO `projpst`.`feedback`
+(`FeedbackID`,
+`Apreciere`,
+`Detalii`)
+VALUES
+(4,
+2,
+"Nu mi-a placut nimic :(");

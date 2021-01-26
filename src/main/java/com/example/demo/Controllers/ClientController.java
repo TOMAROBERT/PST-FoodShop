@@ -2,6 +2,7 @@ package com.example.demo.Controllers;
 
 import com.example.demo.model.Client;
 import com.example.demo.repo.Client_repo;
+import com.example.demo.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,39 +10,36 @@ import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 
+@RestController
+@RequestMapping("/clients")
 public class ClientController {
 
-    private final Client_repo Client_repo;
+    private ClientService clientService;
 
     @Autowired
-    public ClientController(Client_repo Client_repo){
-        this.Client_repo=Client_repo;
+    public ClientController(ClientService clientService){
+        this.clientService=clientService;
     }
 
     @GetMapping
     public List<Client> getAllClients(){
-        List<Client> clients = new ArrayList<>();
-        Client_repo.findAll().forEach(n->clients.add(n));
-        return clients;
+        return clientService.getAllClients();
     }
 
     @GetMapping("/{id}")
-    public Client getAllClientsById(@PathVariable("id") Integer id){
-        return this.Client_repo.findById(id).orElse(null);
+    public Client getAllClientsbyId(@PathVariable("id") Integer id){
+        return clientService.getClient(id);
     }
 
-    // Client nou adaugat
+    //create
+
     @PostMapping
-    public Client newClient(@RequestBody Client client){
-        return Client_repo.save(client);
+    public Client createClient(@RequestBody Client client){
+        return clientService.createClient(client);
     }
 
-    // Client modificat in functie de ID
     @PutMapping("/{id}")
-    public Client modifyClient(@PathVariable("id") Integer id,@RequestBody Client client){
-        client.setUserID(id);
-        return Client_repo.save(client);
+    public Client uppClient(@PathVariable("id") Integer id , @RequestBody Client client){
+        return  clientService.uppClient(id,client);
     }
-
-
 }
