@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "foodOrder")
-@SequenceGenerator(name = "foodOrder_secv" ,initialValue = 1 ,allocationSize = 99)
+@SequenceGenerator(name = "foodOrder_secv" ,initialValue = 2 ,allocationSize = 99)
 @Data
 
 

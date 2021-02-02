@@ -38,4 +38,9 @@ public class ClientService {
         return client_repo.save(client);
     }
 
+    //delete
+    public void DeleteClient(@PathVariable("id") Integer id)
+    {
+        client_repo.deleteById(id);
+    }
 }

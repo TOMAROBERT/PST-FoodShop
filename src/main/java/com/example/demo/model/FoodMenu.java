@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "foodMenu")
-@SequenceGenerator(name = "foodMenu_secv" ,initialValue = 1 ,allocationSize = 99)
+@SequenceGenerator(name = "foodMenu_secv" ,initialValue = 2 ,allocationSize = 99)
 @Data
 
 public class FoodMenu {
@@ -22,6 +22,7 @@ public class FoodMenu {
     @Column(name = "Pret")
     private Integer pret;
 
-    @ManyToOne
+
+    @ManyToOne(cascade=CascadeType.DETACH)
     private FoodOrder foodOrder;
 }

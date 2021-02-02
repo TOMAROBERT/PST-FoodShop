@@ -42,4 +42,11 @@ public class ClientController {
     public Client uppClient(@PathVariable("id") Integer id , @RequestBody Client client){
         return  clientService.uppClient(id,client);
     }
+
+    //delete
+    @DeleteMapping("/{id}")
+    public void DeleteClient(@PathVariable("id") Integer id)
+    {
+        clientService.DeleteClient(id);
+    }
 }

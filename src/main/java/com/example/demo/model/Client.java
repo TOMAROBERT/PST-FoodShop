@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "client")
-@SequenceGenerator(name = "client_secv" ,initialValue = 1 ,allocationSize = 99)
+@SequenceGenerator(name = "client_secv" ,initialValue = 2 ,allocationSize = 99)
 @Data
 
 public class Client {

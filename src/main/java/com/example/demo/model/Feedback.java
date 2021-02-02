@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "feedback")
-@SequenceGenerator(name = "feedback_secv" ,initialValue = 1 ,allocationSize = 99)
+@SequenceGenerator(name = "feedback_secv" , allocationSize = 1)
 @Data
 
 
