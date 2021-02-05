@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+
 @Service
 public class ClientService {
 
     private final Client_repo client_repo;
+
 
     public ClientService(Client_repo client_repo){
         this.client_repo=client_repo;
@@ -28,11 +30,11 @@ public class ClientService {
     }
 
     //creare
-
     public Client createClient(@RequestBody Client client){
         return  client_repo.save(client);
     }
 
+    //edit
     public Client uppClient(@PathVariable("id") Integer id , @RequestBody Client client){
         client.setUserId(id);
         return client_repo.save(client);

@@ -9,7 +9,7 @@
 -- Table structure for table `client`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`client` (
+CREATE TABLE IF NOT EXISTS `client` (
                                                 `UserID` int NOT NULL AUTO_INCREMENT,
                                                 `Email` varchar(20) DEFAULT NULL,
     `Parola` varchar(20) DEFAULT NULL,
@@ -29,7 +29,7 @@ UNLOCK TABLES;
 -- Table structure for table `client_secv`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`client_secv` (
+CREATE TABLE IF NOT EXISTS `client_secv` (
     `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -45,7 +45,7 @@ UNLOCK TABLES;
 -- Table structure for table `destination`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`destination` (
+CREATE TABLE IF NOT EXISTS `destination` (
                                                      `AdressID` int NOT NULL AUTO_INCREMENT,
                                                      `Adresa` varchar(20) DEFAULT NULL,
     `Locatie` varchar(20) DEFAULT NULL,
@@ -64,7 +64,7 @@ UNLOCK TABLES;
 -- Table structure for table `destionation_secv`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`destionation_secv` (
+CREATE TABLE IF NOT EXISTS `destionation_secv` (
     `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -80,7 +80,7 @@ UNLOCK TABLES;
 -- Table structure for table `feedback`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`feedback` (
+CREATE TABLE IF NOT EXISTS `feedback` (
                                                   `FeedbackID` int NOT NULL AUTO_INCREMENT,
                                                   `Apreciere` int DEFAULT NULL,
                                                   `Detalii` varchar(40) DEFAULT NULL,
@@ -99,7 +99,7 @@ UNLOCK TABLES;
 -- Table structure for table `feedback_secv`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`feedback_secv` (
+CREATE TABLE IF NOT EXISTS `feedback_secv` (
     `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -115,7 +115,7 @@ UNLOCK TABLES;
 -- Table structure for table `foodmenu`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`foodmenu` (
+CREATE TABLE IF NOT EXISTS `foodmenu` (
                                                   `FoodID` int NOT NULL AUTO_INCREMENT,
                                                   `DenumireProd` varchar(20) DEFAULT NULL,
     `Ingrediente` varchar(20) DEFAULT NULL,
@@ -138,7 +138,7 @@ UNLOCK TABLES;
 -- Table structure for table `foodmenu_secv`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`foodmenu_secv` (
+CREATE TABLE IF NOT EXISTS `foodmenu_secv` (
     `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -154,7 +154,7 @@ UNLOCK TABLES;
 -- Table structure for table `foodorder`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`foodorder` (
+CREATE TABLE IF NOT EXISTS `foodorder` (
                                                    `OrderID` int NOT NULL AUTO_INCREMENT,
                                                    `Produse` varchar(20) DEFAULT NULL,
     `Cantitate` int DEFAULT NULL,
@@ -173,7 +173,7 @@ UNLOCK TABLES;
 -- Table structure for table `foodorder_secv`
 --
 
-CREATE TABLE IF NOT EXISTS projpst.`foodorder_secv` (
+CREATE TABLE IF NOT EXISTS `foodorder_secv` (
     `next_val` bigint DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

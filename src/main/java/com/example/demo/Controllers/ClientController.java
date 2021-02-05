@@ -38,6 +38,7 @@ public class ClientController {
         return clientService.createClient(client);
     }
 
+    //edit
     @PutMapping("/{id}")
     public Client uppClient(@PathVariable("id") Integer id , @RequestBody Client client){
         return  clientService.uppClient(id,client);
